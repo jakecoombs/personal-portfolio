@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { ArrowLink } from "../../molecules/ArrowLink";
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
   CompanyContainer,
@@ -11,23 +12,34 @@ import {
   Slogan,
   SocialContainer,
   SocialIconsContainer,
+  RepoLink,
+  LinkContainer,
 } from "./FooterStyles";
 
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <LinkList>
-        <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <FooterLink href="tel:+447774657573">+447774657573</FooterLink>
-        </LinkColumn>
-        <LinkColumn>
-          <LinkTitle>Email</LinkTitle>
-          <FooterLink href="mailto:contact@jakecoombs.com">
-            contact@jakecoombs.com
-          </FooterLink>
-        </LinkColumn>
-      </LinkList>
+      <LinkContainer>
+        <LinkList>
+          <LinkColumn>
+            <LinkTitle>Call</LinkTitle>
+            <FooterLink href="tel:+447774657573">+447774657573</FooterLink>
+          </LinkColumn>
+          <LinkColumn>
+            <LinkTitle>Email</LinkTitle>
+            <FooterLink href="mailto:contact@jakecoombs.com">
+              contact@jakecoombs.com
+            </FooterLink>
+          </LinkColumn>
+        </LinkList>
+        <RepoLink>
+          <ArrowLink
+            url="https://github.com/jcoombs235/personal-portfolio"
+            text="Visit the GitHub Repo powering this site"
+          />
+        </RepoLink>
+      </LinkContainer>
+
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>Innovating one project at a time</Slogan>
