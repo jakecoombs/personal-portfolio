@@ -16,6 +16,7 @@ export const HeaderContainer = styled.div`
 `;
 export const FirstItem = styled.div`
   display: flex;
+  cursor: pointer;
   flex-direction: row;
   align-content: center;
   @media ${(props) => props.theme.breakpoints.sm} {
