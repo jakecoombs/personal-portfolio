@@ -33,13 +33,14 @@ export const Footer = () => {
           </LinkColumn>
         </LinkList>
         <RepoLink>
-          <ArrowLink
-            url="https://github.com/jcoombs235/personal-portfolio"
-            text="Visit the GitHub Repo powering this site"
-          />
+          <h3>
+            <ArrowLink
+              url="https://github.com/jcoombs235/personal-portfolio"
+              text="Visit the GitHub Repo powering this site"
+            />
+          </h3>
         </RepoLink>
       </LinkContainer>
-
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>Innovating one project at a time</Slogan>

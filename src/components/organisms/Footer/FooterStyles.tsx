@@ -158,6 +158,7 @@ export const LinkTitle = styled.h4`
 `;
 
 export const RepoLink = styled.div`
-  flex: 1;
-  text-align: right;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 `;
