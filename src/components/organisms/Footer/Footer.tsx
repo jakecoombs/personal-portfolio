@@ -5,7 +5,7 @@ import {
   CompanyContainer,
   FooterWrapper,
   LinkColumn,
-  LinkItem,
+  FooterLink,
   LinkList,
   LinkTitle,
   Slogan,
@@ -19,13 +19,13 @@ export const Footer = () => {
       <LinkList>
         <LinkColumn>
           <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:+447774657573">+447774657573</LinkItem>
+          <FooterLink href="tel:+447774657573">+447774657573</FooterLink>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:contact@jakecoombs.com">
+          <FooterLink href="mailto:contact@jakecoombs.com">
             contact@jakecoombs.com
-          </LinkItem>
+          </FooterLink>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>

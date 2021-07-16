@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LinkItem } from "../../atoms/LinkItem";
 
 export const FooterWrapper = styled.section`
   width: calc(100vw - 96px);
@@ -13,19 +14,10 @@ export const FooterWrapper = styled.section`
   }
 `;
 
-export const LinkItem = styled.a`
+export const FooterLink = styled(LinkItem)`
   font-size: 18px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 16px;
-  transition: 0.3s ease;
-  position: relative;
-  left: 0;
-
-  &:hover {
-    color: #fff;
-    left: 6px;
-  }
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: 16px;

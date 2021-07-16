@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Footer } from "../components/Footer/Footer";
-import { Header } from "../components/Header/Header";
+import { Footer } from "../components/organisms/Footer/Footer";
+import { Header } from "../components/organisms/Header/Header";
 import Theme from "../styles/theme";
 
 export default function App({ Component, pageProps }) {
