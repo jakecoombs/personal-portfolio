@@ -30,7 +30,7 @@ export const Header = () => (
       </li>
       <li>
         <Link href="#tech">
-          <NavLink>Technologies</NavLink>
+          <NavLink>Programming Experience</NavLink>
         </Link>
       </li>
       <li>

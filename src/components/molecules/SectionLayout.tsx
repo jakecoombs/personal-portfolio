@@ -20,7 +20,7 @@ export const SectionLayout = ({ id, header, children }: IProps) => {
 };
 
 const Divider = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid ${(props) => props.theme.colors.divider};
   max-width: 800px;
   margin: auto;
 `;

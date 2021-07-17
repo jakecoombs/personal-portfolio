@@ -116,7 +116,7 @@ export const LinkList = styled.ul`
 
 export const LinkContainer = styled.div`
   display: flex;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid ${(props) => props.theme.colors.divider};
   padding: 40px 0 28px;
 
   @media ${(props) => props.theme.breakpoints.lg} {
