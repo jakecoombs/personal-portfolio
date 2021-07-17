@@ -11,8 +11,8 @@ export const ColumnList = ({ heading, items }: IProps) => {
     <ListContainer>
       {heading && <ListHeader>{heading}</ListHeader>}
       <StyledList>
-        {items.map((item) => (
-          <Item>{item}</Item>
+        {items.map((item, index) => (
+          <Item key={`${item}_${index}`}>{item}</Item>
         ))}
       </StyledList>
     </ListContainer>
