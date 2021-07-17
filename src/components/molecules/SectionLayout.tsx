@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 interface IProps {
-  id: string;
+  id?: string;
   header: string;
   children: ReactNode;
 }

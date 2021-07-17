@@ -1,9 +1,15 @@
 import { About } from "../components/organisms/About/About";
+import { Introduction } from "../components/organisms/Introduction/Introduction";
+import { MainHeader } from "../components/organisms/MainHeader/MainHeader";
+import { Projects } from "../components/organisms/Projects/Projects";
+import { Technologies } from "../components/organisms/Technologies/Technologies";
 
 const IndexPage = () => (
   <>
-    <h1>Hello 👋</h1>
-    <h2>I'm Jake Coombs, an Apprentice Software Engineer</h2>
+    <MainHeader />
+    <Introduction />
+    <Projects />
+    <Technologies />
     <About />
   </>
 );
