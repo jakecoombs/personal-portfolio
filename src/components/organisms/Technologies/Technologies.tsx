@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { ColumnList } from "../../molecules/ColumnList";
 import { SectionLayout } from "../../molecules/SectionLayout";
 
 export const Technologies = () => {
@@ -33,29 +33,8 @@ export const Technologies = () => {
 
   return (
     <SectionLayout id="tech" header="Programming Experience">
-      <h3>Languages</h3>
-      <ColumnList>
-        {languages.map((language) => (
-          <li>{language}</li>
-        ))}
-      </ColumnList>
-      <h3>Technologies</h3>
-      <ColumnList>
-        {tech.map((technology) => (
-          <li>{technology}</li>
-        ))}
-      </ColumnList>
+      <ColumnList heading="Languages" items={languages} />
+      <ColumnList heading="Technologies" items={tech} />
     </SectionLayout>
   );
 };
-
-const ColumnList = styled.ul`
-  column-count: 3;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    column-count: 2;
-  }
-  @media ${(props) => props.theme.breakpoints.sm} {
-    column-count: 1;
-  }
-`;
