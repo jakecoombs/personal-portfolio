@@ -3,6 +3,8 @@ import { ColumnList } from "../../molecules/ColumnList";
 import { SectionLayout } from "../../molecules/SectionLayout";
 
 export const Technologies = () => {
+  //todo: onHover fill up bar to show how much experience
+  //todo: Color code languages and technologies for better identification
   //todo: fetch from API
   const languages = [
     "JavaScript",
@@ -14,27 +16,26 @@ export const Technologies = () => {
     "SQL",
     "NoSQL",
   ];
-  const tech = [
-    "Git",
-    "Jira",
+
+  const tech = ["Git", "Jira", "Docker", "AWS", "Heroku", "Hostinger"];
+
+  const web = [
     "React",
-    "Flutter",
-    "Android Studio",
-    "XCode",
     "GraphQL",
     "Node",
     "Next.js",
     "REST APIs",
     "Styled-Components",
-    "AWS",
-    "Heroku",
-    "Hostinger",
   ];
+
+  const mobile = ["Flutter", "Android Studio", "XCode"];
 
   return (
     <SectionLayout id="tech" header="Programming Experience">
       <ColumnList heading="Languages" items={languages} />
       <ColumnList heading="Technologies" items={tech} />
+      <ColumnList heading="Web Development" items={web} />
+      <ColumnList heading="Mobile App Development" items={mobile} />
     </SectionLayout>
   );
 };
