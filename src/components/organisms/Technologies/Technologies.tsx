@@ -34,8 +34,8 @@ export const Technologies = () => {
     <SectionLayout id="tech" header="Programming Experience">
       <ColumnList heading="Languages" items={languages} />
       <ColumnList heading="Technologies" items={tech} />
-      <ColumnList heading="Web Development" items={web} />
-      <ColumnList heading="Mobile App Development" items={mobile} />
+      <ColumnList heading="www.web-development.com" items={web} />
+      <ColumnList heading="AppDevelopment.apk" items={mobile} />
     </SectionLayout>
   );
 };
