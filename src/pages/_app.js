@@ -21,4 +21,5 @@ const MainContentContainer = styled.div`
   width: calc(100vw - 96px);
   max-width: 1040px;
   margin: auto;
+  text-align: center;
 `;
