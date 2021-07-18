@@ -4,7 +4,7 @@ import { SectionLayout } from "../../molecules/SectionLayout";
 export const About = () => {
   return (
     <SectionLayout id="about" header="About Me">
-      <p>About me.</p>
+      <p>...</p>
     </SectionLayout>
   );
 };
