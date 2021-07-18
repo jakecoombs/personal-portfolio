@@ -27,8 +27,8 @@ export const Footer = () => {
           </LinkColumn>
           <LinkColumn>
             <LinkTitle>Email</LinkTitle>
-            <FooterLink href="mailto:contact@jakecoombs.com">
-              contact@jakecoombs.com
+            <FooterLink href="mailto:contact@jakecoombs.co.uk">
+              contact@jakecoombs.co.uk
             </FooterLink>
           </LinkColumn>
         </LinkList>
