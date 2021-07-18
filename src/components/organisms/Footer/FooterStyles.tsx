@@ -22,15 +22,6 @@ export const FooterLink = styled(LinkItem)`
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: 16px;
     line-height: 28px;
-    display: flex;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 8px;
-    line-height: 14px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
   }
 `;
 
@@ -110,7 +101,7 @@ export const LinkList = styled.ul`
     gap: 16px;
   }
   @media ${(props) => props.theme.breakpoints.sm} {
-    gap: 5px;
+    display: block;
   }
 `;
 
@@ -126,11 +117,13 @@ export const LinkContainer = styled.div`
   @media ${(props) => props.theme.breakpoints.md} {
     width: 100%;
     padding: 32px 0 16px;
+    flex-direction: column;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     padding: 32px 4px 16px;
+    text-align: center;
   }
 `;
 
@@ -139,6 +132,13 @@ export const LinkColumn = styled.div`
   flex-direction: column;
   max-width: 220px;
   width: 100%;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    text-align: center;
+    margin: auto;
+    max-width: none;
+    width: calc(100vw - 96px);
+  }
 `;
 
 export const LinkTitle = styled.h4`
@@ -151,7 +151,6 @@ export const LinkTitle = styled.h4`
   margin-bottom: 16px;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 10px;
     line-height: 12px;
     margin-bottom: 8px;
   }
@@ -161,4 +160,8 @@ export const RepoLink = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    justify-content: center;
+  }
 `;
