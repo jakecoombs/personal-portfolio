@@ -6,6 +6,9 @@ import { Technologies } from "../components/organisms/Technologies/Technologies"
 
 const IndexPage = () => (
   <>
+    <head>
+      <title>Jake Coombs</title>
+    </head>
     <MainHeader />
     <Introduction />
     <Projects />

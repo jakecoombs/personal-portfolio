@@ -7,7 +7,7 @@ const defaultTheme = {
   // Colors for layout
   colors: {
     primary: "hsl(204,23.8%,95.9%)",
-    background: "#0F1624",
+    background: "#061a46",
     divider: "rgba(255, 255, 255, 0.3)",
   },
   // Breakpoints for responsive design

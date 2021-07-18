@@ -2,6 +2,9 @@ import { ArrowLink } from "../components/molecules/ArrowLink";
 
 const ApiTestPage = () => (
   <>
+    <head>
+      <title>API | Jake Coombs</title>
+    </head>
     <h1>Api Test Suite</h1>
     <h3>
       This is an API Test Suite built using GraphQL and deployed using Heroku.
