@@ -1,34 +1,44 @@
 import React from "react";
-import { ColumnList } from "../../molecules/ColumnList";
+import { ColumnList, IColumnListItem } from "../../molecules/ColumnList";
 import { SectionLayout } from "../../molecules/SectionLayout";
 
 export const Technologies = () => {
   //todo: onHover fill up bar to show how much experience
-  //todo: Color code languages and technologies for better identification
   //todo: fetch from API
-  const languages = [
-    "JavaScript",
-    "TypeScript",
-    "CSS",
-    "PHP",
-    "Dart",
-    "Java",
-    "SQL",
-    "NoSQL",
+  const languages: IColumnListItem[] = [
+    { text: "JavaScript", backgroundColor: "yellow", color: "black" },
+    { text: "TypeScript", backgroundColor: "blue" },
+    { text: "CSS" },
+    { text: "PHP", backgroundColor: "white", color: "purple" },
+    { text: "Dart" },
+    { text: "Java" },
+    { text: "SQL" },
+    { text: "NoSQL" },
   ];
 
-  const tech = ["Git", "Jira", "Docker", "AWS", "Heroku", "Hostinger"];
-
-  const web = [
-    "React",
-    "GraphQL",
-    "Node",
-    "Next.js",
-    "REST APIs",
-    "Styled-Components",
+  const tech: IColumnListItem[] = [
+    { text: "Git" },
+    { text: "Jira", backgroundColor: "blue" },
+    { text: "Docker" },
+    { text: "AWS", backgroundColor: "orange", color: "black" },
+    { text: "Heroku" },
+    { text: "Hostinger" },
   ];
 
-  const mobile = ["Flutter", "Android Studio", "XCode"];
+  const web: IColumnListItem[] = [
+    { text: "React", color: "blue" },
+    { text: "GraphQL" },
+    { text: "Node", color: "green" },
+    { text: "Next.js" },
+    { text: "REST APIs" },
+    { text: "Styled-Components" },
+  ];
+
+  const mobile: IColumnListItem[] = [
+    { text: "Flutter", color: "blue" },
+    { text: "Android Studio", color: "green" },
+    { text: "XCode" },
+  ];
 
   return (
     <SectionLayout id="tech" header="Programming Experience">

@@ -1,9 +1,14 @@
-import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface IProps {
   heading?: string;
-  items: Array<ReactNode>;
+  items: Array<IColumnListItem>;
+}
+
+export interface IColumnListItem {
+  text: string;
+  backgroundColor?: string;
+  color?: string;
 }
 
 export const ColumnList = ({ heading, items }: IProps) => {
@@ -12,7 +17,13 @@ export const ColumnList = ({ heading, items }: IProps) => {
       {heading && <ListHeader>{heading}</ListHeader>}
       <StyledList>
         {items.map((item, index) => (
-          <Item key={`${item}_${index}`}>{item}</Item>
+          <Item
+            key={`${item}_${index}`}
+            $fg={item.color}
+            $bg={item.backgroundColor}
+          >
+            {item.text}
+          </Item>
         ))}
       </StyledList>
     </ListContainer>
@@ -38,6 +49,15 @@ const ListHeader = styled.h3`
   margin-bottom: 1rem;
 `;
 
-const Item = styled.li`
+const Item = styled.li<{ $bg?: string; $fg?: string }>`
   margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 5px 0;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: bold;
+  border: 2px solid;
+
+  ${({ $bg }) => `background-color: ${$bg}`};
+  ${({ $fg }) => `color: ${$fg}`};
 `;
