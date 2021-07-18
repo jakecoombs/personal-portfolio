@@ -22,6 +22,7 @@ export const Header = () => (
         </LogoContainer>
       </Link>
     </FirstItem>
+    {/* todo: Set up open and close for small breakpoints */}
     <MainTabs>
       <li>
         <Link href="#projects">

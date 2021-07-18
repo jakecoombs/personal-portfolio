@@ -29,6 +29,9 @@ export const MainTabs = styled.div`
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 2 / 2 / 3 / 5;
+    column-count: 1;
+    display: block;
+    text-align: center;
   }
 `;
 export const LastItem = styled.div`
