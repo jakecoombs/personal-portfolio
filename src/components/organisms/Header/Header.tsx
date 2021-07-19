@@ -31,7 +31,7 @@ export const Header = () => {
         </li>
         <li>
           <Link href="#tech">
-            <NavLink>Programming Experience</NavLink>
+            <NavLink>Developer Experience</NavLink>
           </Link>
         </li>
         <li>

@@ -53,7 +53,7 @@ export const Technologies = () => {
   );
 
   return (
-    <SectionLayout id="tech" header="Programming Experience">
+    <SectionLayout id="tech" header="Developer Experience">
       <ColumnList heading="Languages" items={languages} />
       {breakpoints.small ? (
         <ShowMore>{laterSections}</ShowMore>
