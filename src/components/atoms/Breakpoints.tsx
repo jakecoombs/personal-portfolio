@@ -7,7 +7,7 @@ interface IBreakpoints {
 }
 
 export const useBreakpoints = (): IBreakpoints => {
-  const [windowWidth, setWindowWidth] = React.useState<number>(0);
+  const [windowWidth, setWindowWidth] = React.useState<number>(9999);
   React.useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
