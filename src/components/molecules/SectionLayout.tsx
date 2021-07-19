@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { Divider } from "../atoms/Divider";
 
 interface IProps {
   id?: string;
@@ -10,7 +11,7 @@ interface IProps {
 export const SectionLayout = ({ id, header, children }: IProps) => {
   return (
     <SectionWrapper>
-      <Divider />
+      <SectionDivider />
       <SectionContainer>
         <Header id={id}>{header}</Header>
         {children}
@@ -19,8 +20,7 @@ export const SectionLayout = ({ id, header, children }: IProps) => {
   );
 };
 
-const Divider = styled.div`
-  border-top: 1px solid ${(props) => props.theme.colors.divider};
+const SectionDivider = styled(Divider)`
   max-width: 800px;
   margin: auto;
 `;
