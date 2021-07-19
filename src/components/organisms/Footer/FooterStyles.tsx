@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { LinkItem } from "../../atoms/LinkItem";
 
 export const FooterWrapper = styled.section`
   width: calc(100vw - 96px);
@@ -14,7 +13,7 @@ export const FooterWrapper = styled.section`
   }
 `;
 
-export const FooterLink = styled(LinkItem)`
+export const FooterLink = styled.a`
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 16px;

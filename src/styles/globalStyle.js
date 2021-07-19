@@ -25,8 +25,20 @@ const GlobalStyle = createGlobalStyle`
   h1,h2,h3,h4,h5,h6,button {
     font-family: ${(props) => props.theme.fonts.title};
   }
-  a {
+  a, button {
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    transition: 0.3s ease;
+    position: relative;
+    left: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+      left: 6px;
+    }
   }
   li{
     list-style: none;

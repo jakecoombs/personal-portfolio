@@ -1,8 +1,6 @@
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import styled from "styled-components";
-import { LinkItem } from "../atoms/LinkItem";
-
 interface IProps {
   url: string;
   text: string;
@@ -10,12 +8,12 @@ interface IProps {
 
 export const ArrowLink = ({ url, text }: IProps) => {
   return (
-    <LinkItem href={url}>
+    <a href={url}>
       <ArrowLinkContainer>
         {text}
         <Arrow />
       </ArrowLinkContainer>
-    </LinkItem>
+    </a>
   );
 };
 
