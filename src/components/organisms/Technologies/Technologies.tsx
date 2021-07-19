@@ -6,38 +6,38 @@ export const Technologies = () => {
   //todo: onHover fill up bar to show how much experience
   //todo: fetch from API
   const languages: IColumnListItem[] = [
-    { text: "JavaScript", backgroundColor: "yellow", color: "black" },
-    { text: "TypeScript", backgroundColor: "blue" },
+    { text: "JavaScript", backgroundColor: "#EFD81D", color: "black" },
+    { text: "TypeScript", backgroundColor: "#2F74C0" },
     { text: "CSS" },
-    { text: "PHP", backgroundColor: "white", color: "purple" },
+    { text: "PHP", backgroundColor: "#777BB3", color: "black" },
     { text: "Dart" },
-    { text: "Java" },
+    { text: "Java", color: "#EB2D2C" },
     { text: "SQL" },
     { text: "NoSQL" },
   ];
 
   const tech: IColumnListItem[] = [
     { text: "Git" },
-    { text: "Jira", backgroundColor: "blue" },
+    { text: "Jira", backgroundColor: "#0071ED" },
     { text: "Docker" },
-    { text: "AWS", backgroundColor: "orange", color: "black" },
-    { text: "Heroku" },
+    { text: "AWS", backgroundColor: "#F79400", color: "black" },
+    { text: "Heroku", color: "#430098", backgroundColor: "white" },
     { text: "Hostinger" },
   ];
 
   const web: IColumnListItem[] = [
-    { text: "React", color: "blue" },
-    { text: "GraphQL" },
-    { text: "Node", color: "green" },
+    { text: "React", color: "#61DBFB" },
+    { text: "GraphQL", color: "#E535AB" },
+    { text: "Node", color: "#83CD29" },
     { text: "Next.js" },
     { text: "REST APIs" },
     { text: "Styled-Components" },
   ];
 
   const mobile: IColumnListItem[] = [
-    { text: "Flutter", color: "blue" },
-    { text: "Android Studio", color: "green" },
-    { text: "XCode" },
+    { text: "Flutter", backgroundColor: "#54C5F7", color: "black" },
+    { text: "Android Studio", color: "#92C755" },
+    { text: "XCode", color: "#1D8EF8" },
   ];
 
   return (

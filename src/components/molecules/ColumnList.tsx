@@ -12,11 +12,14 @@ export interface IColumnListItem {
 }
 
 export const ColumnList = ({ heading, items }: IProps) => {
+  const sortedItems = items.sort((a, b) =>
+    (!a.color && b.color) || (!a.backgroundColor && b.backgroundColor) ? 1 : -1
+  );
   return (
     <ListContainer>
       {heading && <ListHeader>{heading}</ListHeader>}
       <StyledList>
-        {items.map((item, index) => (
+        {sortedItems.map((item, index) => (
           <Item
             key={`${item}_${index}`}
             $fg={item.color}
