@@ -2,11 +2,11 @@ import React from "react";
 import { useBreakpoints } from "../../atoms/Breakpoints";
 import { ColumnList, IColumnListItem } from "../../molecules/ColumnList";
 import { SectionLayout } from "../../molecules/SectionLayout";
+import { ShowMore } from "../../molecules/ShowMore";
 
 export const Technologies = () => {
   //todo: onHover fill up bar to show how much experience
   //todo: fetch from API
-  const [shown, setShow] = React.useState(false);
   const breakpoints = useBreakpoints();
 
   const languages: IColumnListItem[] = [
@@ -44,20 +44,21 @@ export const Technologies = () => {
     { text: "XCode", color: "#1D8EF8" },
   ];
 
+  const laterSections = (
+    <>
+      <ColumnList heading="Technologies" items={tech} />
+      <ColumnList heading="www.web-development.com" items={web} />
+      <ColumnList heading="MobileAppDevelopment.apk" items={mobile} />
+    </>
+  );
+
   return (
     <SectionLayout id="tech" header="Programming Experience">
       <ColumnList heading="Languages" items={languages} />
-      {(!breakpoints.small || shown) && (
-        <>
-          <ColumnList heading="Technologies" items={tech} />
-          <ColumnList heading="www.web-development.com" items={web} />
-          <ColumnList heading="MobileAppDevelopment.apk" items={mobile} />
-        </>
-      )}
-      {breakpoints.small && (
-        <button onClick={() => setShow(!shown)}>
-          {shown ? "Show less..." : "Show more..."}
-        </button>
+      {breakpoints.small ? (
+        <ShowMore>{laterSections}</ShowMore>
+      ) : (
+        <>{laterSections}</>
       )}
     </SectionLayout>
   );
