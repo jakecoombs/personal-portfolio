@@ -21,24 +21,22 @@ export const ColumnList = ({ heading, items }: IProps) => {
     <ListContainer>
       {heading && <ListHeader>{heading}</ListHeader>}
       <StyledList>
-        {sortedItems.map((item, index) =>
-          item.link ? (
-            <a href={item.link} key={`${item}_${index}`}>
-              <Item $fg={item.color} $bg={item.backgroundColor}>
+        {sortedItems.map((item, index) => (
+          <Item
+            key={`${item}_${index}`}
+            $fg={item.color}
+            $bg={item.backgroundColor}
+          >
+            {item.link ? (
+              <a href={item.link} key={`${item}_${index}`}>
                 {item.text}
                 <Arrow />
-              </Item>
-            </a>
-          ) : (
-            <Item
-              key={`${item}_${index}`}
-              $fg={item.color}
-              $bg={item.backgroundColor}
-            >
-              {item.text}
-            </Item>
-          )
-        )}
+              </a>
+            ) : (
+              item.text
+            )}
+          </Item>
+        ))}
       </StyledList>
     </ListContainer>
   );
@@ -70,8 +68,11 @@ const ListHeader = styled.h3`
 `;
 
 const Item = styled.li<{ $bg?: string; $fg?: string }>`
-  display: flex;
-  justify-content: center;
+  a {
+    display: flex;
+    justify-content: center;
+  }
+
   border-radius: 20px;
   padding: 5px 0;
   margin: 0 30px 1rem 30px;
