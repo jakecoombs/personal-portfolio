@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Arrow } from "./ArrowLink";
 
 interface IProps {
   heading?: string;
@@ -7,6 +8,7 @@ interface IProps {
 
 export interface IColumnListItem {
   text: string;
+  link?: string;
   backgroundColor?: string;
   color?: string;
 }
@@ -19,15 +21,24 @@ export const ColumnList = ({ heading, items }: IProps) => {
     <ListContainer>
       {heading && <ListHeader>{heading}</ListHeader>}
       <StyledList>
-        {sortedItems.map((item, index) => (
-          <Item
-            key={`${item}_${index}`}
-            $fg={item.color}
-            $bg={item.backgroundColor}
-          >
-            {item.text}
-          </Item>
-        ))}
+        {sortedItems.map((item, index) =>
+          item.link ? (
+            <a href={item.link} key={`${item}_${index}`}>
+              <Item $fg={item.color} $bg={item.backgroundColor}>
+                {item.text}
+                <Arrow />
+              </Item>
+            </a>
+          ) : (
+            <Item
+              key={`${item}_${index}`}
+              $fg={item.color}
+              $bg={item.backgroundColor}
+            >
+              {item.text}
+            </Item>
+          )
+        )}
       </StyledList>
     </ListContainer>
   );
@@ -38,13 +49,19 @@ const ListContainer = styled.div`
 `;
 
 const StyledList = styled.ul`
-  column-count: 3;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    column-count: 2;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
   }
   @media ${(props) => props.theme.breakpoints.sm} {
-    column-count: 1;
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
   }
 `;
 
@@ -53,11 +70,11 @@ const ListHeader = styled.h3`
 `;
 
 const Item = styled.li<{ $bg?: string; $fg?: string }>`
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
   border-radius: 20px;
   padding: 5px 0;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 0 30px 1rem 30px;
   font-weight: bold;
   border: 2px solid;
 

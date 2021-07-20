@@ -17,7 +17,7 @@ export const ArrowLink = ({ url, text }: IProps) => {
   );
 };
 
-const Arrow = styled(AiOutlineArrowRight)`
+export const Arrow = styled(AiOutlineArrowRight)`
   margin-left: 4px;
 `;
 
