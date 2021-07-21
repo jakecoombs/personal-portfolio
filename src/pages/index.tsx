@@ -1,4 +1,3 @@
-import { About } from "../components/organisms/About/About";
 import { Introduction } from "../components/organisms/Introduction/Introduction";
 import { MainHeader } from "../components/organisms/MainHeader/MainHeader";
 import { Projects } from "../components/organisms/Projects/Projects";
@@ -14,7 +13,6 @@ const IndexPage = () => (
     <Introduction />
     <Projects />
     <Technologies />
-    <About />
   </>
 );
 
