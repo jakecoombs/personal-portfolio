@@ -2,12 +2,9 @@ import styled from "styled-components";
 
 export const MainHeader = () => {
   return (
-    <>
-      <h1>
-        Hello World <WavingHand>👋</WavingHand>
-      </h1>
-      <h2>I'm Jake Coombs, an Apprentice Software Engineer</h2>
-    </>
+    <h1>
+      Hello World <WavingHand>👋</WavingHand>
+    </h1>
   );
 };
 
