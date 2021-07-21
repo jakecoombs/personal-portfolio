@@ -47,10 +47,10 @@ export const LastItem = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: hsla(0, 0%, 100%, 0.75);
   transition: 0.4s ease;
   &:hover {
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     opacity: 1;
     cursor: pointer;
   }
@@ -67,7 +67,7 @@ export const SocialIcons = styled.a`
   border-radius: 50px;
   padding: 8px;
   &:hover {
-    background-color: #212d45;
+    background-color: hsl(220, 35%, 20%);
     transform: scale(1.2);
     cursor: pointer;
   }
