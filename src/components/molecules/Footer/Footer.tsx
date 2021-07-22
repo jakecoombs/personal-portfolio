@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { ArrowLink } from "../../molecules/ArrowLink";
-import { SocialIcons } from "../Header/HeaderStyles";
+import { ArrowLink } from "../ArrowLink";
+import { SocialIcons } from "../Header";
 import {
   CompanyContainer,
   FooterWrapper,

@@ -6,7 +6,6 @@ export const Introduction = () => {
   return (
     <SectionLayout header="Introduction">
       <TextBox>
-        <h3>I'm Jake Coombs, an Apprentice Software Engineer</h3>
         <p>
           I have been an Apprentice Software Engineer at Bloomberg since
           September 2019. During my time at Bloomberg I have been working with

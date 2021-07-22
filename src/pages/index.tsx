@@ -1,15 +1,15 @@
 import { Introduction } from "../components/organisms/Introduction/Introduction";
-import { MainHeader } from "../components/organisms/MainHeader/MainHeader";
 import { Projects } from "../components/organisms/Projects/Projects";
 import { Technologies } from "../components/organisms/Technologies/Technologies";
 import Head from "next/head";
+import { HelloPanel } from "../components/molecules/HelloPanel";
 
 const IndexPage = () => (
   <>
     <Head>
       <title>Jake Coombs</title>
     </Head>
-    <MainHeader />
+    <HelloPanel />
     <Introduction />
     <Projects />
     <Technologies />
