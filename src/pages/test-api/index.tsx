@@ -40,7 +40,7 @@ const ApiTestPage = () => {
         </button>
         <LinkContainer>
           <ArrowLink
-            url="https://github.com/jcoombs235"
+            url="https://github.com/jakecoombs"
             text="Visit the GitHub Repo for the API"
           />
         </LinkContainer>

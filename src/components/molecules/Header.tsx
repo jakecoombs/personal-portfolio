@@ -40,7 +40,7 @@ export const Header = () => {
         {breakpoints.medium && !breakpoints.small && <Divider vertical />}
       </MainTabs>
       <LastItem>
-        <SocialIcons href="https://github.com/jcoombs235">
+        <SocialIcons href="https://github.com/jakecoombs">
           <AiFillGithub size="3rem" />
         </SocialIcons>
         <SocialIcons href="https://www.linkedin.com/in/jake-coombs-2093b7164/">

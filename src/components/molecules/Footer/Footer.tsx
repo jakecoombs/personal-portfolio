@@ -31,7 +31,7 @@ export const Footer = () => {
         <RepoLink>
           <h3>
             <ArrowLink
-              url="https://github.com/jcoombs235/personal-portfolio"
+              url="https://github.com/jakecoombs/personal-portfolio"
               text="Visit the GitHub Repo powering this site"
             />
           </h3>
@@ -42,7 +42,7 @@ export const Footer = () => {
           <Slogan>Innovating one project at a time</Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons href="https://github.com/jcoombs235">
+          <SocialIcons href="https://github.com/jakecoombs">
             <AiFillGithub size="3rem" />
           </SocialIcons>
           <SocialIcons href="https://www.linkedin.com/in/jake-coombs-2093b7164/">
