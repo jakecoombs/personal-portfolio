@@ -22,10 +22,6 @@ export const Footer = () => {
       <LinkContainer>
         <LinkList>
           <LinkColumn>
-            <LinkTitle>Call</LinkTitle>
-            <FooterLink href="tel:+447774657573">+447774657573</FooterLink>
-          </LinkColumn>
-          <LinkColumn>
             <LinkTitle>Email</LinkTitle>
             <FooterLink href="mailto:contact@jakecoombs.co.uk">
               contact@jakecoombs.co.uk
