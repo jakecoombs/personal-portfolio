@@ -4,9 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import { ArrowLink } from "../../components/molecules/ArrowLink";
 import { CreatePost } from "../../components/organisms/Api/CreatePost";
-import { useMeQuery } from "../../generated/graphql";
+import { useLogoutMutation, useMeQuery } from "../../generated/graphql";
 
 const ApiTestPage = () => {
+  const [{ fetching: isLogoutFetching }, logout] = useLogoutMutation();
   const [{ data, fetching }] = useMeQuery();
   let body = null;
   const router = useRouter();
@@ -28,7 +29,15 @@ const ApiTestPage = () => {
           Feel free to try it out and see how it works.
         </h3>
         <CreatePost />
-        <button>Logout</button>
+        <button
+          onClick={async () => {
+            await logout();
+            router.push("/");
+          }}
+          disabled={isLogoutFetching}
+        >
+          Logout
+        </button>
         <LinkContainer>
           <ArrowLink
             url="https://github.com/jcoombs235"
