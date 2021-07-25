@@ -44,6 +44,21 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+
+    input {
+      margin: 10px 0;
+      padding: 5px;
+    }
+    button {
+      margin: 10px 0;
+    }
+  }
+
 `;
 
 export default GlobalStyle;
