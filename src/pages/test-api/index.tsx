@@ -1,7 +1,7 @@
-import { ArrowLink } from "../components/molecules/ArrowLink";
 import Head from "next/head";
-import { CreatePost } from "../components/organisms/Api/CreatePost";
-import { Login } from "../components/organisms/Api/Login";
+import React from "react";
+import { ArrowLink } from "../../components/molecules/ArrowLink";
+import { CreatePost } from "../../components/organisms/Api/CreatePost";
 
 const ApiTestPage = () => {
   return (
@@ -15,7 +15,6 @@ const ApiTestPage = () => {
         <br />
         Feel free to try it out and see how it works.
       </h3>
-      <Login />
       <CreatePost />
       <ArrowLink
         url="https://github.com/jcoombs235"

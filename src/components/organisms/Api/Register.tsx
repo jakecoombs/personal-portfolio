@@ -1,22 +1,22 @@
 import { SectionLayout } from "../../molecules/SectionLayout";
 import { Formik } from "formik";
 import styled from "styled-components";
-import { useLoginMutation } from "../../../generated/graphql";
+import { useRegisterMutation } from "../../../generated/graphql";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { useRouter } from "next/router";
 
-export const Login = () => {
-  const [, login] = useLoginMutation();
+export const Register = () => {
+  const [, register] = useRegisterMutation();
   const router = useRouter();
   return (
-    <SectionLayout header="Login">
+    <SectionLayout header="Register">
       <Formik
         initialValues={{ username: "", password: "" }}
         onSubmit={async (values, { setSubmitting, setErrors }) => {
-          const response = await login(values);
-          if (response.data?.login.errors) {
-            setErrors(toErrorMap(response.data.login.errors));
-          } else if (response.data?.login.user) {
+          const response = await register(values);
+          if (response.data?.register.errors) {
+            setErrors(toErrorMap(response.data.register.errors));
+          } else if (response.data?.register.user) {
             router.push("/test-api");
           }
 
@@ -58,8 +58,8 @@ export const Login = () => {
             >
               Submit
             </button>
-            <button onClick={() => router.push("/test-api/register")}>
-              Register
+            <button onClick={() => router.push("/test-api/login")}>
+              Login
             </button>
           </StyledForm>
         )}
