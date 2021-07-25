@@ -53,6 +53,13 @@ const GlobalStyle = createGlobalStyle`
     input {
       margin: 10px 0;
       padding: 5px;
+      border: 2px solid;
+      border-radius: 5px;
+      &:focus { 
+        outline: none !important;
+        border-color: #FFF;
+        box-shadow: 0 0 10px #FFF;
+      }
     }
     button {
       margin: 10px 0;

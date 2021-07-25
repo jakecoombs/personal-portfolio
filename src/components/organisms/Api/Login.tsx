@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useLoginMutation } from "../../../generated/graphql";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { useRouter } from "next/router";
+import { FieldInput } from "../../atoms/FieldInput";
 
 export const Login = () => {
   const [, login] = useLoginMutation();
@@ -33,22 +34,25 @@ export const Login = () => {
           isSubmitting,
         }) => (
           <StyledForm onSubmit={handleSubmit}>
-            <input
+            <FieldInput
               type="text"
               name="username"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.username}
               placeholder="Username"
+              errors={errors}
+              touched={touched}
             />
-            {errors.username && touched.username && errors.username}
-            <input
+            <FieldInput
               type="password"
               name="password"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
               placeholder="Password"
+              errors={errors}
+              touched={touched}
             />
             {errors.password && touched.password && errors.password}
             <button

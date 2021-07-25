@@ -33,7 +33,6 @@ export const CreatePost = () => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          console.log("Submitted");
           await create(values);
           setSubmitting(false);
         }}
