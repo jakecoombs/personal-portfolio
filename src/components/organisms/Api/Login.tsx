@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { useLoginMutation } from "../../../generated/graphql";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { useRouter } from "next/router";
-import { FieldInput } from "../../atoms/FieldInput";
+import NextLink from "next/link";
+import { ErrorText, getStyles } from "../../atoms/FieldInput";
 
 export const Login = () => {
   const [, login] = useLoginMutation();
@@ -34,27 +35,30 @@ export const Login = () => {
           isSubmitting,
         }) => (
           <StyledForm onSubmit={handleSubmit}>
-            <FieldInput
+            <input
               type="text"
               name="username"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.username}
               placeholder="Username"
-              errors={errors}
-              touched={touched}
+              style={getStyles(errors, "username")}
             />
-            <FieldInput
+            <ErrorText>
+              {errors.username && touched.username && errors.username}
+            </ErrorText>
+            <input
               type="password"
               name="password"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
               placeholder="Password"
-              errors={errors}
-              touched={touched}
+              style={getStyles(errors, "password")}
             />
-            {errors.password && touched.password && errors.password}
+            <ErrorText>
+              {errors.password && touched.password && errors.password}
+            </ErrorText>
             <button
               type="submit"
               disabled={isSubmitting}
@@ -62,8 +66,8 @@ export const Login = () => {
             >
               Submit
             </button>
-            <button onClick={() => router.push("/test-api/register")}>
-              Register
+            <button>
+              <NextLink href="/test-api/register">Register</NextLink>
             </button>
           </StyledForm>
         )}

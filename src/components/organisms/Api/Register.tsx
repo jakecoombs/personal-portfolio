@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { useRegisterMutation } from "../../../generated/graphql";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { useRouter } from "next/router";
-import { FieldInput } from "../../atoms/FieldInput";
+import { ErrorText, getStyles } from "../../atoms/FieldInput";
+import NextLink from "next/link";
 
 export const Register = () => {
   const [, register] = useRegisterMutation();
@@ -34,26 +35,30 @@ export const Register = () => {
           isSubmitting,
         }) => (
           <StyledForm onSubmit={handleSubmit}>
-            <FieldInput
+            <input
               type="text"
               name="username"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.username}
               placeholder="Username"
-              errors={errors}
-              touched={touched}
+              style={getStyles(errors, "username")}
             />
-            <FieldInput
+            <ErrorText>
+              {errors.username && touched.username && errors.username}
+            </ErrorText>
+            <input
               type="password"
               name="password"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
               placeholder="Password"
-              errors={errors}
-              touched={touched}
+              style={getStyles(errors, "password")}
             />
+            <ErrorText>
+              {errors.password && touched.password && errors.password}
+            </ErrorText>
             <button
               type="submit"
               disabled={isSubmitting}
@@ -61,8 +66,8 @@ export const Register = () => {
             >
               Submit
             </button>
-            <button onClick={() => router.push("/test-api/login")}>
-              Login
+            <button>
+              <NextLink href="/test-api/login">Login</NextLink>
             </button>
           </StyledForm>
         )}
