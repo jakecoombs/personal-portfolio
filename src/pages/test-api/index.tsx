@@ -1,6 +1,8 @@
-import Head from "next/head";
+import { withUrqlClient } from "next-urql";
 import { useRouter } from "next/router";
 import React from "react";
+import { PageLayout } from "src/components/molecules/PageLayout";
+import { createUrqlClient } from "src/utils/createUrqlClient";
 import styled from "styled-components";
 import { ArrowLink } from "../../components/molecules/ArrowLink";
 import { CreatePost } from "../../components/organisms/Api/CreatePost";
@@ -47,14 +49,7 @@ const ApiTestPage = () => {
       </>
     );
   }
-  return (
-    <>
-      <Head>
-        <title>API | Jake Coombs</title>
-      </Head>
-      {body}
-    </>
-  );
+  return <PageLayout headTitle="API">{body}</PageLayout>;
 };
 
 const LinkContainer = styled.div`
@@ -63,4 +58,4 @@ const LinkContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export default ApiTestPage;
+export default withUrqlClient(createUrqlClient)(ApiTestPage);

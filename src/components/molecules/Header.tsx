@@ -22,13 +22,7 @@ export const Header = () => {
         {breakpoints.medium && !breakpoints.small && <Divider vertical />}
         <li>
           <Link href="#projects">
-            <NavLink>Projects</NavLink>
-          </Link>
-        </li>
-        {breakpoints.medium && <Divider vertical />}
-        <li>
-          <Link href="#tech">
-            <NavLink>Developer Experience</NavLink>
+            <NavLink>Projects & Experience</NavLink>
           </Link>
         </li>
         {breakpoints.medium && <Divider vertical />}
@@ -38,6 +32,12 @@ export const Header = () => {
           </Link>
         </li>
         {breakpoints.medium && !breakpoints.small && <Divider vertical />}
+        <li>
+          <Link href="/test-api">
+            <NavLink>Test API</NavLink>
+          </Link>
+        </li>
+        {breakpoints.medium && <Divider vertical />}
       </MainTabs>
       <LastItem>
         <SocialIcons href="https://github.com/jakecoombs">
