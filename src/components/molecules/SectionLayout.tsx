@@ -4,8 +4,8 @@ import { Divider } from "../atoms/Divider";
 
 interface IProps {
   id?: string;
-  header: string;
-  children: ReactNode;
+  header?: string;
+  children?: ReactNode;
 }
 
 export const SectionLayout = ({ id, header, children }: IProps) => {
@@ -13,7 +13,7 @@ export const SectionLayout = ({ id, header, children }: IProps) => {
     <SectionWrapper>
       <SectionDivider />
       <SectionContainer>
-        <Header id={id}>{header}</Header>
+        {header && <Header id={id}>{header}</Header>}
         {children}
       </SectionContainer>
     </SectionWrapper>
