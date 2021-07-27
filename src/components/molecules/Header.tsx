@@ -33,7 +33,7 @@ export const Header = () => {
         </li>
         {breakpoints.medium && !breakpoints.small && <Divider vertical />}
         <li>
-          <Link href="/test-api">
+          <Link href="/_api">
             <NavLink>Test API</NavLink>
           </Link>
         </li>

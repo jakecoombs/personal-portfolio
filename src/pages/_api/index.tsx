@@ -39,7 +39,7 @@ const ApiTestPage = () => {
         <br />
         <button
           onClick={() => {
-            router.push("/test-api/login");
+            router.push("/_api/login");
           }}
           disabled={isLogoutFetching}
         >

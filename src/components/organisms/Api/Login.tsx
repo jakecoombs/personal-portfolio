@@ -13,13 +13,13 @@ export const Login = () => {
   return (
     <SectionLayout header="Login">
       <Formik
-        initialValues={{ username: "", password: "" }}
+        initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values, { setSubmitting, setErrors }) => {
           const response = await login(values);
           if (response.data?.login.errors) {
             setErrors(toErrorMap(response.data.login.errors));
           } else if (response.data?.login.user) {
-            router.push("/test-api");
+            router.push("/_api");
           }
 
           setSubmitting(false);
@@ -37,15 +37,17 @@ export const Login = () => {
           <StyledForm onSubmit={handleSubmit}>
             <input
               type="text"
-              name="username"
+              name="usernameOrEmail"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.username}
-              placeholder="Username"
-              style={getStyles(errors, "username")}
+              value={values.usernameOrEmail}
+              placeholder="Username or Email"
+              style={getStyles(errors, "usernameOrEmail")}
             />
             <ErrorText>
-              {errors.username && touched.username && errors.username}
+              {errors.usernameOrEmail &&
+                touched.usernameOrEmail &&
+                errors.usernameOrEmail}
             </ErrorText>
             <input
               type="password"
@@ -67,7 +69,7 @@ export const Login = () => {
               Submit
             </button>
             <button>
-              <NextLink href="/test-api/register">Register</NextLink>
+              <NextLink href="/_api/register">Register</NextLink>
             </button>
           </StyledForm>
         )}

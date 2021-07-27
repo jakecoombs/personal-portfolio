@@ -13,13 +13,13 @@ export const Register = () => {
   return (
     <SectionLayout header="Register">
       <Formik
-        initialValues={{ username: "", password: "" }}
+        initialValues={{ username: "", email: "", password: "" }}
         onSubmit={async (values, { setSubmitting, setErrors }) => {
-          const response = await register(values);
+          const response = await register({ options: values });
           if (response.data?.register.errors) {
             setErrors(toErrorMap(response.data.register.errors));
           } else if (response.data?.register.user) {
-            router.push("/test-api");
+            router.push("/_api");
           }
 
           setSubmitting(false);
@@ -48,6 +48,18 @@ export const Register = () => {
               {errors.username && touched.username && errors.username}
             </ErrorText>
             <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              placeholder="Email"
+              style={getStyles(errors, "email")}
+            />
+            <ErrorText>
+              {errors.email && touched.email && errors.email}
+            </ErrorText>
+            <input
               type="password"
               name="password"
               onChange={handleChange}
@@ -67,7 +79,7 @@ export const Register = () => {
               Submit
             </button>
             <button>
-              <NextLink href="/test-api/login">Login</NextLink>
+              <NextLink href="/_api/login">Login</NextLink>
             </button>
           </StyledForm>
         )}
