@@ -7,7 +7,7 @@ import { createUrqlClient } from "src/utils/createUrqlClient";
 import { isServer } from "src/utils/isServer";
 import styled from "styled-components";
 import { ArrowLink } from "../../components/molecules/ArrowLink";
-import { CreatePost } from "../../components/organisms/Api/CreatePost";
+import { CreatePost } from "../../components/organisms/forms/CreatePost";
 import {
   useLogoutMutation,
   useMeQuery,
@@ -39,7 +39,7 @@ const ApiTestPage = () => {
         <br />
         <button
           onClick={() => {
-            router.push("/_api/login");
+            router.push("/login");
           }}
           disabled={isLogoutFetching}
         >

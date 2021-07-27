@@ -1,24 +1,24 @@
 import { SectionLayout } from "../../molecules/SectionLayout";
 import { Formik } from "formik";
 import styled from "styled-components";
-import { useRegisterMutation } from "../../../generated/graphql";
+import { useLoginMutation } from "../../../generated/graphql";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { useRouter } from "next/router";
-import { ErrorText, getStyles } from "../../atoms/FieldInput";
 import NextLink from "next/link";
+import { ErrorText, getStyles } from "../../atoms/FieldInput";
 
-export const Register = () => {
-  const [, register] = useRegisterMutation();
+export const Login = () => {
+  const [, login] = useLoginMutation();
   const router = useRouter();
   return (
-    <SectionLayout header="Register">
+    <SectionLayout header="Login">
       <Formik
-        initialValues={{ username: "", email: "", password: "" }}
+        initialValues={{ usernameOrEmail: "", password: "" }}
         onSubmit={async (values, { setSubmitting, setErrors }) => {
-          const response = await register({ options: values });
-          if (response.data?.register.errors) {
-            setErrors(toErrorMap(response.data.register.errors));
-          } else if (response.data?.register.user) {
+          const response = await login(values);
+          if (response.data?.login.errors) {
+            setErrors(toErrorMap(response.data.login.errors));
+          } else if (response.data?.login.user) {
             router.push("/_api");
           }
 
@@ -37,27 +37,17 @@ export const Register = () => {
           <StyledForm onSubmit={handleSubmit}>
             <input
               type="text"
-              name="username"
+              name="usernameOrEmail"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.username}
-              placeholder="Username"
-              style={getStyles(errors, "username")}
+              value={values.usernameOrEmail}
+              placeholder="Username or Email"
+              style={getStyles(errors, "usernameOrEmail")}
             />
             <ErrorText>
-              {errors.username && touched.username && errors.username}
-            </ErrorText>
-            <input
-              type="text"
-              name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              placeholder="Email"
-              style={getStyles(errors, "email")}
-            />
-            <ErrorText>
-              {errors.email && touched.email && errors.email}
+              {errors.usernameOrEmail &&
+                touched.usernameOrEmail &&
+                errors.usernameOrEmail}
             </ErrorText>
             <input
               type="password"
@@ -79,7 +69,7 @@ export const Register = () => {
               Submit
             </button>
             <button>
-              <NextLink href="/_api/login">Login</NextLink>
+              <NextLink href="/register">Register</NextLink>
             </button>
           </StyledForm>
         )}

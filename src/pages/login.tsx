@@ -2,7 +2,7 @@ import { withUrqlClient } from "next-urql";
 import React from "react";
 import { PageLayout } from "src/components/molecules/PageLayout";
 import { createUrqlClient } from "src/utils/createUrqlClient";
-import { Login } from "../../components/organisms/Api/Login";
+import { Login } from "../components/organisms/forms/Login";
 
 const LoginPage = () => {
   return (
