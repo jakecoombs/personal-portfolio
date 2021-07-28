@@ -1,11 +1,12 @@
-import { SectionLayout } from "../../molecules/SectionLayout";
 import { Formik } from "formik";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+import { useChangePasswordMutation } from "src/generated/graphql";
 import styled from "styled-components";
 import { toErrorMap } from "../../../utils/toErrorMap";
 import { ErrorText, getStyles } from "../../atoms/FieldInput";
-import { useRouter } from "next/router";
-import { useChangePasswordMutation } from "src/generated/graphql";
-import React from "react";
+import { SectionLayout } from "../../molecules/SectionLayout";
 
 export const ResetPassword = ({ token }: { token: string }) => {
   const [, changePassword] = useChangePasswordMutation();
@@ -43,26 +44,40 @@ export const ResetPassword = ({ token }: { token: string }) => {
           isSubmitting,
         }) => (
           <StyledForm onSubmit={handleSubmit}>
-            <ErrorText>{tokenError && tokenError}</ErrorText>
-            <input
-              type="password"
-              name="newPassword"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.newPassword}
-              placeholder="New Password"
-              style={getStyles(errors, "newPassword")}
-            />
-            <ErrorText>
-              {errors.newPassword && touched.newPassword && errors.newPassword}
-            </ErrorText>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              onSubmit={(e) => e.preventDefault()}
-            >
-              Submit
-            </button>
+            {tokenError ? (
+              <>
+                <ErrorText>{tokenError}</ErrorText>
+                <button>
+                  <NextLink href="/change-password">
+                    Reset Password Again
+                  </NextLink>
+                </button>
+              </>
+            ) : (
+              <>
+                <input
+                  type="password"
+                  name="newPassword"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.newPassword}
+                  placeholder="New Password"
+                  style={getStyles(errors, "newPassword")}
+                />
+                <ErrorText>
+                  {errors.newPassword &&
+                    touched.newPassword &&
+                    errors.newPassword}
+                </ErrorText>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  Submit
+                </button>
+              </>
+            )}
           </StyledForm>
         )}
       </Formik>

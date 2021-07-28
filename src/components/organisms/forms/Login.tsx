@@ -71,6 +71,9 @@ export const Login = () => {
             <button>
               <NextLink href="/register">Register</NextLink>
             </button>
+            <button>
+              <NextLink href="/change-password">Forgotten Password</NextLink>
+            </button>
           </StyledForm>
         )}
       </Formik>
